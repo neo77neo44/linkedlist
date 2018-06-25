@@ -1,3 +1,14 @@
+typedef struct tLinkedListNode{
+	void		*memAddress;
+	vc_uint16	file;
+	vc_uint16	line;
+	vc_uint16	size;
+}tLinkedListNode;
+typedef struct tLinkedList  {
+	tLinkedListNode data;
+	struct tLinkedList* next;
+	struct tLinkedList* prev;
+}tLinkedList;
 tLinkedList* vc_heap_head;
 tLinkedList* GetNewNode(void *x,unsigned int size, unsigned int file, unsigned int line) 
 {
