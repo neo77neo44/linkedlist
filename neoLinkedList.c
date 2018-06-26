@@ -72,3 +72,39 @@ int LL_get_len()
 	}
 	return linkedlist_count;
 }
+/* function to swap data of two nodes a and b*/
+void swap(tLinkedList *a, tLinkedList *b)
+{
+	tLinkedListNode t_node;
+	t_node= a->data;
+	a->data = b->data;
+	b->data = t_node;
+	
+}
+void BubbledSort_linked_list()
+{
+    	int swapped, i;
+    	tLinkedList *ptr1;
+    	tLinkedList *lptr = NULL;
+ 
+    	/* Checking for empty list */
+    	if (vc_heap_head == NULL){
+        	return;
+	} 
+	do{
+		swapped = 0;
+		ptr1 = vc_heap_head;
+		while (ptr1->next != lptr)
+		{
+			if (ptr1->data.size > ptr1->next->data.size)
+			{ 
+				swap(ptr1, ptr1->next);
+				swapped = 1;
+			}
+			ptr1 = ptr1->next;
+		}
+		lptr = ptr1;
+	}while (swapped);
+    
+
+}
